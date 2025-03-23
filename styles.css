@@ -1,0 +1,239 @@
+/* General Body Styling */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    border-color: aqua;
+    align-content: center; /* Moved here for a unified layout */
+}
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/* Login Section Styling */
+.login-container {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: #db1111;
+}
+.login-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.login-form {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: greenyellow;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+}
+.login-form input,
+.login-form button {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 2px solid #4CAF50;
+}
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+.logo div {
+    text-align: left;
+}
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+.logo p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    border-bottom: 2px solid #ccc;
+}
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #388E3C;
+}
+
+/* Section Styling */
+section {
+    padding: 30px 20px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 900px;
+}
+h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+ul {
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #200bd4;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #db1111;
+}
+
+/* Attendance Status Styling */
+.attendance-status {
+    font-size: 20px;
+}
+.present {
+    color: green;
+}
+.absent {
+    color: red;
+}
+.late {
+    color: orange;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #ccc;
+    margin-top: 30px;
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+
+/* Notice Item Styling */
+.notice-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.notice-item h2 {
+    margin-top: 0;
+    color: #333;
+}
+.notice-item p {
+    margin-bottom: 10px;
+}
+.notice-item .date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 5px;
+}
+.no-notices {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.slide {
+    display: none;
+    width: 100%;
+}
+.slide img {
+    width: 100%;
+    height: auto;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+/* Button Styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    background-color: #3e8e41;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}

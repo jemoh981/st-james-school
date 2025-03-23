@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Jaymore School</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance</h1>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample attendance data (replace with server-side data)
+        let attendanceData = [
+            { studentId: "S001", studentName: "Alice Smith", date: "2024-05-28", status: "present" },
+            { studentId: "S002", studentName: "Bob Johnson", date: "2024-05-28", status: "absent" },
+            { studentId: "S003", studentName: "Charlie Brown", date: "2024-05-28", status: "late" },
+            { studentId: "S001", studentName: "Alice Smith", date: "2024-05-29", status: "present" },
+            { studentId: "S002", studentName: "Bob Johnson", date: "2024-05-29", status: "present" },
+            { studentId: "S003", studentName: "Charlie Brown", date: "2024-05-29", status: "absent" },
+        ];
+
+        let tableBody = document.getElementById("attendanceTable").getElementsByTagName("tbody")[0];
+
+        attendanceData.forEach(record => {
+            let row = tableBody.insertRow();
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+
+            cell1.innerHTML = record.studentId;
+            cell2.innerHTML = record.studentName;
+            cell3.innerHTML = record.date;
+
+            let statusIcon = "";
+            if (record.status === "present") {
+                statusIcon = "&#10004;";
+            } else if (record.status === "absent") {
+                statusIcon = "&#10006;";
+            } else if(record.status === "late"){
+                statusIcon = "&#9932"
+            }
+
+            cell4.innerHTML = `<span class="attendance-status ${record.status}">${statusIcon}</span>`;
+        });
+
+        for (let i = 0; i < 50; i++) {
+            let row = tableBody.insertRow();
+            for (let j = 0; j < 4; j++) {
+                row.insertCell(j).innerHTML = ""; // Add empty cells
+            }
+        }
+    </script>
+    <footer><p>&copy; 2024 st james accademy. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/0795077967" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+        </div> <br>
+
+        </div></footer>
+</body>
+</html>

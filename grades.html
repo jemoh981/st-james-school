@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades - Jaymore School</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grades</h1>
+        <table id="gradesTable">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Mathematics</th>
+                    <th>Kiswahili</th>
+                    <th>Integrated Sciences</th>
+                    <th>Health Education</th>
+                    <th>English</th>
+                    <th>Social Studies</th>
+                    <th>Agriculture</th>
+                    <th>Life Skills</th>
+                    <th>Religious Education</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample grades data (replace with server-side data)
+        let gradesData = [
+            {
+                studentId: "S001",
+                studentName: "Alice Smith",
+                mathematics: 85,
+                kiswahili: 90,
+                integratedSciences: 88,
+                healthEducation: 92,
+                english: 95,
+                socialStudies: 89,
+                agriculture: 91,
+                lifeSkills: 93,
+                religiousEducation: 94,
+                status: "pass"
+            },
+            {
+                studentId: "S002",
+                studentName: "Bob Johnson",
+                mathematics: 60,
+                kiswahili: 65,
+                integratedSciences: 70,
+                healthEducation: 55,
+                english: 62,
+                socialStudies: 68,
+                agriculture: 72,
+                lifeSkills: 58,
+                religiousEducation: 63,
+                status: "pass"
+            },
+            {
+                studentId: "S003",
+                studentName: "Charlie Brown",
+                mathematics: 45,
+                kiswahili: 50,
+                integratedSciences: 55,
+                healthEducation: 40,
+                english: 48,
+                socialStudies: 52,
+                agriculture: 47,
+                lifeSkills: 43,
+                religiousEducation: 49,
+                status: "fail"
+            },
+        ];
+
+        let tableBody = document.getElementById("gradesTable").getElementsByTagName("tbody")[0];
+
+        gradesData.forEach(record => {
+            let row = tableBody.insertRow();
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
+            let cell8 = row.insertCell(7);
+            let cell9 = row.insertCell(8);
+            let cell10 = row.insertCell(9);
+            let cell11 = row.insertCell(10);
+            let cell12 = row.insertCell(11);
+
+            cell1.innerHTML = record.studentId;
+            cell2.innerHTML = record.studentName;
+            cell3.innerHTML = record.mathematics;
+            cell4.innerHTML = record.kiswahili;
+            cell5.innerHTML = record.integratedSciences;
+            cell6.innerHTML = record.healthEducation;
+            cell7.innerHTML = record.english;
+            cell8.innerHTML = record.socialStudies;
+            cell9.innerHTML = record.agriculture;
+            cell10.innerHTML = record.lifeSkills;
+            cell11.innerHTML = record.religiousEducation;
+            cell12.innerHTML = `<span class="grade-status ${record.status}">${record.status.charAt(0).toUpperCase() + record.status.slice(1)}</span>`;
+        });
+
+        // Add 50 empty rows
+        for (let i = 0; i < 50; i++) {
+            let row = tableBody.insertRow();
+            for (let j = 0; j < 12; j++) {
+                row.insertCell(j).innerHTML = ""; // Add empty cells
+            }
+        }
+    </script>
+    <footer><p>&copy; 2024 st james accademy. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/0795077967" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+        </div> <br>
+
+        </div></footer>
+</body>
+</html>

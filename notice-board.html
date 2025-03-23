@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board - Jaymore School</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notice Board</h1>
+        <div id="noticeList">
+            <div class="no-notices">There are currently no notices.</div>
+        </div>
+
+        <script>
+            let notices = [
+                {
+                    title: "School Holiday Announcement",
+                    content: "Please note that the school will be closed for the mid-term break from [2025-04-01] to [2025-05-15].",
+                    date: "2025-03-02"
+                },
+                {
+                    title: "Parent-Teacher Meeting",
+                    content: "A parent-teacher meeting will be held on [2025-05-15] at [08:00 am] in the school hall.",
+                    date: "2025-03-01"
+                },
+                {
+                    title: "Upcoming Exam Schedule",
+                    content: "The exam schedule for the upcoming term is now available. Please check the school website for details.",
+                    date: "2025-05-25"
+                }
+            ];
+
+            let noticeList = document.getElementById("noticeList");
+            noticeList.innerHTML = "";
+
+            if (notices.length === 0) {
+                noticeList.innerHTML = "<div class='no-notices'>There are currently no notices.</div>";
+            } else {
+
+                notices.forEach(notice => {
+                    let noticeItem = document.createElement("div");
+                    noticeItem.className = "notice-item";
+                    noticeItem.innerHTML = `
+                        <h2>${notice.title}</h2>
+                        <p class="date">${notice.date}</p>
+                        <p>${notice.content}</p>
+                    `;
+                    noticeList.appendChild(noticeItem);
+                });
+            }
+
+        </script>
+    </div>
+    <footer><p>&copy; 2024 st james accademy. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/0795077967" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+        </div> <br>
+
+        </div></footer>
+</body>
+</html>

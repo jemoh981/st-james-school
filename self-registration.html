@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Registration - Jaymore School</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            line-height: 4.5;
+            font-size: 11px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Self Registration</h1>
+        <form id="registrationForm">
+            <div id="errorMessages" class="error-message"></div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required><br>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="parentName">Parent/Guardian Name:</label>
+            <input type="text" id="parentName" name="parentName" required><br>
+
+            <label for="parentPhone">Parent/Guardian Phone Number:</label>
+            <input type="tel" id="parentPhone" name="parentPhone" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            let errorMessages = document.getElementById('errorMessages');
+            errorMessages.innerHTML = '';
+            if (!document.getElementById('email').value.includes('@')) {
+                errorMessages.innerHTML = 'Please enter a valid email address.';
+                event.preventDefault();
+                return;
+            }
+            if (document.getElementById('phone').value.length < 10){
+                errorMessages.innerHTML += '<br> Phone number must be at least 10 digits.';
+                event.preventDefault();
+                return;
+            }
+            console.log("Form submitted!");
+        });
+    </script>
+    <footer><p>&copy; 2024 st james accademy. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/0795077967" target="_blank" style="color: #25D366;"><i class="fab fa-whatsapp"></i></a>
+        </div> <br>
+
+        </div></footer>
+</body>
+</html>
